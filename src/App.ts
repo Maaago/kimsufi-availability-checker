@@ -47,7 +47,7 @@ export default class App
 			if(available)
 				this.telegram.sendMessage("Good news! Kimsufi's product "+name+" is available right now!");
 			else
-				this.telegram.sendMessage("So am I still waiting...");
+				console.log("So am I still waiting...");
 		});
 	}
 }
