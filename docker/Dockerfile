@@ -2,7 +2,7 @@ FROM oven/bun:latest
 
 WORKDIR /code
 COPY ./package.json .
-COPY ./src .
+COPY ./src ./src
 
 RUN bun install
 
