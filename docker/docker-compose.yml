@@ -1,0 +1,7 @@
+services:
+  kimsufi:
+    image: registry.mago.ga/kimsufi-availability-checker:latest
+    container_name: kimsufi-availability-checker
+    restart: unless-stopped
+    env_file:
+      - ../.env

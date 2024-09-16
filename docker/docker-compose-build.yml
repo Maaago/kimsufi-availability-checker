@@ -1,0 +1,11 @@
+services:
+  kimsufi:
+    container_name: kimsufi-availability-checker
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TELEGRAM_BOT_TOKEN=${BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${CHAT_ID}
+      # - INTERVAL=15

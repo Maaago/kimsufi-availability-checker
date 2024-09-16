@@ -1,0 +1,21 @@
+{
+  "name": "kimsufi-crawler",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "prod": "bun run src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node-telegram-bot-api": "^0.64.7"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@yuva1422/telegram.js": "^1.0.5",
+    "node-telegram-bot-api": "^0.66.0",
+    "toad-scheduler": "^3.0.1"
+  }
+}
