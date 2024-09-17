@@ -14,11 +14,12 @@ export default class App
 
 		const task = new Task('Availabilities check', this.checkAvailabilities.bind(this));
 
-		const minutes = Number(Bun.env.INTERVAL) ?? 15;
+		const minutes = Number(Bun.env.INTERVAL ?? 15);
 		this.job = new SimpleIntervalJob({ minutes }, task);
 
 		this.telegram = new Telegram();
-		this.telegram.sendMessage("Backend started!");
+
+		console.log("Backend started!");
 	}
 
 	start(): void
@@ -48,6 +49,7 @@ export default class App
 				this.telegram.sendMessage("Good news! Kimsufi's product "+name+" is available right now!");
 			else
 				console.log("So am I still waiting...");
-		});
+		})
+		.catch(e => console.error(e.message, e.stack));
 	}
 }
