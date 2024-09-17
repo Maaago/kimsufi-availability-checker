@@ -7,4 +7,4 @@ COPY ./src ./src
 RUN bun install
 
 ENTRYPOINT [ "bun" ]
-CMD [ "run" "prod" ]
+CMD [ "run", "prod" ]
