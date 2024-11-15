@@ -14,7 +14,7 @@ export default class Telegram
 	sendMessage(message: string): void
 	{
 		if(this.telegramBot)
-			this.telegramBot.sendMessage(Bun.env.TELEGRAM_CHAT_ID!, message)
+			this.telegramBot.sendMessage(Bun.env.TELEGRAM_CHAT_ID!, message, { parse_mode: "MarkdownV2" })
 				.catch((e: any) => console.error("Can't send message: "+e.message));
 	}
 }

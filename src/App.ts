@@ -47,7 +47,7 @@ export default class App
 		.then(({ name, available }) =>
 		{
 			if(available)
-				this.telegram.sendMessage("Good news! Kimsufi's product "+name+" is available right now!");
+				this.telegram.sendMessage("Good news! Kimsufi's product "+name+" is available right now! [https://eco.ovhcloud.com/en/kimsufi/ks-a/](Click here) to buy it");
 			else
 				console.log("So am I still waiting...");
 		})
