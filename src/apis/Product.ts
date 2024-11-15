@@ -25,9 +25,9 @@ export default class Product
 		return availabilities.map((availability: _Availability) => new Availability(this.catalog, availability));
 	}
 
-	async isAvailable(): Promise<boolean>
+	async isAvailable(plan?: Plan): Promise<boolean>
 	{
-		const availabilities = await this.getAvailability();
+		const availabilities = await this.getAvailability(plan);
 
 		return availabilities.map(availability => availability.isAvailable())
 			.reduce((prev, current) => (prev || current), false);

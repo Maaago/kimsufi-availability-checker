@@ -42,7 +42,8 @@ export default class App
 		// .then(data => data.getPlans().filter(plan => plan.isActive()))
 		// .then(ps => ps.filter(p => p.data.planCode.includes("game")).map(p => [ p.data.product, p.data.blobs ]))
 		.then(catalog => catalog.getProduct("24ska01"))
-		.then(async product => ({ name: product.plans[0].invoiceName, available: await product.isAvailable() }))
+		.then(product => ({ product, plan: product.plans.find(plan => plan.planCode === "24ska01") ?? product.plans[0] }))
+		.then(async ({ product, plan }) => ({ name: plan.invoiceName, available: await product.isAvailable(plan) }))
 		.then(({ name, available }) =>
 		{
 			if(available)
